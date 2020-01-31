@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="presentPopover()">
+        <ion-icon name="settings"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-item>
+    <ion-range
+      min="0"
+      max="1"
+      step="0.01"
+      [(ngModel)]="brightnessModel"
+      (ionChange)="adjustBrightness()"
+    >
+      <ion-icon size="small" slot="start" name="sunny"></ion-icon>
+      <ion-icon slot="end" name="sunny"></ion-icon>
+    </ion-range>
+  </ion-item>
+  <ion-button routerLink="/chip">Chips </ion-button>
+  <ion-button (click)="presentModal()">Show Modal </ion-button>
+  <ion-button routerLink="/homepage">Shopping Cart </ion-button>
+  <ion-button routerLink="/barcode">Barcode Scanner </ion-button>
+  <ion-button routerLink="/notificationpage">Get Notification</ion-button>
+  <ion-button routerLink="/geolocate">Geo Locate </ion-button>
+  <ion-button routerLink="/vupload">Record Audio </ion-button>
+  <ion-button routerLink="/filetransfer">File Transfer</ion-button>
+  <ion-button (click)="checkBattery()">Check Battery </ion-button>
+
+  <ion-list>
+    <ion-item *ngFor="let contact of everybody | async">
+      <ion-label>
+        {{contact.name.givenName}}
+      </ion-label>
+      <ion-icon
+        slot="end"
+        item-start
+        *ngIf="contact.phoneNumbers"
+        (click)="callContact(contact.phoneNumbers[0].value)"
+        ios="ios-call"
+        md="md-call"
+        tappable
+      ></ion-icon>
+    </ion-item>
+  </ion-list>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-card
+          *ngFor="let list of lists1; index as i"
+          [routerLink]="['/route-ex/' , list.id]"
+        >
+          <ion-card-content>
+            <h1>{{list.id}} {{list.itemno}}</h1>
+            <ion-img src="{{list.imagelist}}"></ion-img>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-infinite-scroll (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data..."
+    >
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

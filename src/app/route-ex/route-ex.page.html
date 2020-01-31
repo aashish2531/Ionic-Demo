@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Product Details
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button routerLink="/login">Login</ion-button>
+  <h1>{{res.itemno}}</h1>
+  <h2>{{res.price}}</h2>
+  <ion-img src="{{res.imagelist}}"></ion-img>
+
+  <ngx-qrcode qrc-value="{{res.id}}"></ngx-qrcode>
+</ion-content>

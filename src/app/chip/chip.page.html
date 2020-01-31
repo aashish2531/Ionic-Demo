@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>chip</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-button routerLink="/addtodo">Add Todo's</ion-button>
+    </ion-row>
+    <ion-row>
+      <ion-button routerLink="/todolist">Todo's List</ion-button>
+    </ion-row>
+    <ion-row>
+      <ion-chip #chip1>
+        <ion-label>Chip1</ion-label>
+      </ion-chip>
+      <ion-chip #chip2>
+        <ion-label>Chip2</ion-label>
+      </ion-chip>
+      <ion-chip #chip3>
+        <ion-label>Chip3</ion-label>
+      </ion-chip>
+      <ion-chip #chip4>
+        <ion-label>Chip4</ion-label>
+      </ion-chip>
+    </ion-row>
+  </ion-grid>
+  <ion-button (click)="logout()">
+    Logout
+  </ion-button>
+</ion-content>

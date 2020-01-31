@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add Todo's</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <ion-item class="form-group">
+      <ion-label position="floating" color="primary">Name:</ion-label>
+      <ion-input type="email" formControlName="name"></ion-input>
+    </ion-item>
+    <ion-item class="form-group">
+      <ion-label position="floating" color="primary">Description:</ion-label>
+      <ion-input type="email" formControlName="description"></ion-input>
+    </ion-item>
+    <ion-item class="form-group">
+      <ion-label position="floating" color="primary">Due Date:</ion-label>
+      <ion-input type="email" formControlName="dueDate"></ion-input>
+      <!-- <ion-datetime
+        formControlName="dueDate"
+        displayFormat="YYYY-MM-DD"
+      ></ion-datetime> -->
+    </ion-item>
+    <ion-item class="form-group">
+      <ion-label position="floating" color="primary">Priority:</ion-label>
+      <ion-input type="email" formControlName="priority"></ion-input>
+    </ion-item>
+
+    <ion-button type="submit">Submit</ion-button>
+  </form>
+</ion-content>

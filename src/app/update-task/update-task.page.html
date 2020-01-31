@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>update-task</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label for="email">Name:</ion-label>
+      <ion-input type="text" formControlName="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label for="email">Description:</ion-label>
+      <ion-input type="email" formControlName="description"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label for="email">Due Date:</ion-label>
+      <ion-input type="email" formControlName="dueDate"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label for="email">Priority:</ion-label>
+      <ion-input type="email" formControlName="priority"></ion-input>
+    </ion-item>
+    <ion-button type="submit" routerLink="/tabs/tab4">Submit</ion-button>
+  </form>
+</ion-content>

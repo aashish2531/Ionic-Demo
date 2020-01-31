@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Tab Two
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item (click)="eventFromPopover()()">
+    Information 2
+  </ion-item>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let photo of photoService.photos">
+        <img [src]="photo.data" />
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-fab-button (click)="photoService.takePicture()">
+    <ion-icon name="camera"></ion-icon>
+  </ion-fab-button>
+  <div class="ion-padding">
+    <ion-button (click)="selectImage()">
+      Pick Multiple
+    </ion-button>
+  </div>
+</ion-content>
